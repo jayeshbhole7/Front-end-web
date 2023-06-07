@@ -13,22 +13,23 @@
     --color-white: hsl(252, 30%, var(--white-color-lightness));
     --color-light: hsl(252, 30%, var(--light-color-lightness));
     --color-gray: hsl(252, 15%, 65%);
-    --color-primary: hsl(25, 74.1%, 64.1%);
+    /* --color-primary: hsl(var(--primary-color-hue), 75%, 120%); */
+    --color-primary: linear-gradient(to right, hsl(191, 69%, 67%), hsl(293, 73%, 67%));
     --color-secondary: hsl(252, 100%, 90%);
     --color-success: hsl(120, 95%, 65%);
     --color-danger:hsl(0, 95%, 65%);
     --color-black: hsl(252, 30%, 10%);
 
-    --border-radius:2rem;
-    --card-border-radius:0.9rem;
-    --btn-padding:0.6rem 2rem;
-    --search-padding:0.6rem 1rem;
-    --card-padding:1rem;
+    --border-radius: 2rem;
+    --card-border-radius: 1rem;
+    --btn-padding: 0.6rem 2rem;
+    --search-padding: 0.6rem 1rem;
+    --card-padding: 1rem;
+    --sticky-top-left: 5.4rem;
+    --sticky-top-right: -18rem;   
 
-    --sticky-top-left: 5rem;
-    --sticky-top-right: -18rem;
-    
 }
+
 *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -46,11 +47,15 @@ body {
     overflow-x: hidden;
 }
 
-/* GENERAL STYLES */
+
 .container {
-    width: 95%;
+    width: 85%;
     margin: 0 auto ;
 }
+
+/* .logo{
+    background: var(--color-primary);
+} */
 
 .profile-picture {
     width: 2.7rem;
@@ -112,7 +117,7 @@ nav .container {
     padding: var(--search-padding);
 }
 
-.search-bar input [type="search"] {
+.search-bar input[type="search"] {
     background: transparent;
     width: 30vw;
     margin-left: 1rem;
@@ -127,14 +132,14 @@ nav .search-bar input[type="search"]::placeholder {
 nav .create {
     display: flex;
     align-items: center;
+    gap:2rem;
 }
 
 /*============================= MAIN =========================*/
 
 main {
     position: relative;
-    top: 4.7rem;
-
+    top: 5.4rem;
 }
 
 main .container {
@@ -164,7 +169,7 @@ main .container .left .profile {
 
 /*================================ SIDEBAR ===========================*/
 .left .sidebar {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     background: var(--color-white);
     border-radius: var(--card-border-radius);
 }
@@ -172,7 +177,7 @@ main .container .left .profile {
 .left .sidebar .menu-item {
     display: flex;
     align-items: center;
-    height: 4rem;
+    height: 3.7rem;
     cursor: pointer;
     transition: all 300ms ease;
     position: relative;
@@ -183,27 +188,27 @@ main .container .left .profile {
 }
 
 .left .sidebar i {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     color: var(--color-gray);
-    margin-left: 0.5rem;
+    margin-left: 1.5rem;
     position: relative;
 }
 
 .left .sidebar i .notification-count {
     background: var(--color-danger);
     color: white;
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     width: fit-content;
-    border-radius: 0.9rem;
-    padding: 0.1rem 0.3rem;
+    border-radius: 0.8rem;
+    padding: 0.1rem 0.4rem;
     position: absolute;
     top: -0.2rem;
     right: -0.3rem;
 }
 
 .left .sidebar h3 {
-    margin-left: 0.3rem;
-    font-size: 0.9rem;
+    margin-left: 1.5rem;
+    font-size: 1rem;
 }
 
 .left .sidebar .active {
@@ -285,9 +290,11 @@ main .container .left .profile {
     justify-content: space-between;
     height: 12rem;
     gap: 0.5rem;
+    cursor: pointer;
 }
 
 .middle .stories .story {
+    background: red;
     padding: var(--card-padding);
     border-radius: var(--card-border-radius);
     display: flex;
@@ -312,7 +319,7 @@ main .container .left .profile {
 }
 
 .middle .stories .story .name {
-    z-index: 2;
+    z-index: 1;
 }
 
 .middle .stories .story:nth-child(1){
@@ -351,7 +358,7 @@ main .container .left .profile {
 .middle .story .profile-picture {
     width: 2rem;
     height: 2rem;
-    align-self: start;
+    align-self: flex-start;
     border: 3px solid var(--color-primary);
 }
 
@@ -370,12 +377,12 @@ main .container .left .profile {
 }
 
 .middle .create-post input[type="text"] {
+    background: transparent;
     justify-self: start;
     width: 100%;
     padding-left: 1rem;
-    background: transparent;
-    color: var(--color-dark);
     margin-right: 1rem;
+    color: var(--color-dark);
 }
 
 /* --------------------- FEEDS ---------------------*/
@@ -383,28 +390,28 @@ main .container .left .profile {
     background: var(--color-white);
     border-radius: var(--card-border-radius);
     padding: var(--card-padding);
-    margin: 1rem 0 ;
+    margin: 1rem 0;
     font-size: 0.85rem;
-    line-height: 1.5;
+    line-height: 1.5rem;
 }
 
-.middle .feed .head {
+.middle .feed .feeds .head {
     display: flex;
     justify-content: space-between;
 }
 
-.middle .feed .user {
+.middle .feed .feeds .user {
     display: flex;
     gap: 1rem;
 }
 
-.middle .feed .photo {
+.middle .feed .feeds .photo {
     border-radius: var(--card-border-radius);
     overflow: hidden;
     margin: 0.7rem 0;
 }
 
-.middle .feed .action-buttons {
+.middle .feed .feeds .action-buttons {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -412,11 +419,11 @@ main .container .left .profile {
     margin: 0.6rem;
 }
 
-.middle .liked-by {
+.middle .feeds .feed .liked-by {
     display: flex;
 }
 
-.middle .liked-by span {
+.middle .feeds .feed .liked-by span {
     width: 1.4rem;
     height: 1.4rem;
     display: block;
@@ -426,11 +433,11 @@ main .container .left .profile {
     margin-left: -0.6rem;
 }
 
-.middle .liked-by span:first-child {
+.middle .feed .feeds .liked-by span:first-child {
     margin: 0;
 }
 
-.middle .liked-by p {
+.middle .feed .feeds .liked-by p {
     margin-left: 0.5rem;
 }
 
@@ -438,8 +445,9 @@ main .container .left .profile {
 
 main .container .right {
     height: max-content;
-    position: var(--sticky-top-right);
+    position: sticky;
     top: var(--sticky-top-right);
+    bottom: 0;
 }
 
 .right .messages {
@@ -455,9 +463,9 @@ main .container .right {
     margin-bottom: 1rem;
 }
 
-.right .messages i {
+/* .right .messages i {
     font-size: 1.4rem;
-}
+} */
 
 .right .messages .search-bar {
     display: flex;
@@ -474,45 +482,46 @@ main .container .right {
 .right .messages .category h6 {
     width: 100%;
     text-align: center;
-    border-bottom: 4px solid var(--color-light);
+    border-bottom: 3px solid var(--color-light);
     padding-bottom: 0.5rem;
     font-size: 0.85rem;
+    cursor: pointer;
 }
 
 .right .messages .category .active {
     border-color: var(--color-dark);
 }
-
-.right .messages .messages-requests {
+  
+.right .messages .message-requests {
     color: var(--color-primary);
 }
 
-.right .messages .messages {
+.right .messages .message {
     display: flex;
     gap: 1rem;
     margin-bottom: 1rem;
-    align-items: start;
+    align-items: flex-start;
 }
 
-.right .messages .profile-picture {
+.right .messages .message:last-child {
+    margin: 0;
+}
+
+.right .messages .message .profile-picture {
     position: relative;
     overflow: visible;
 }
 
-.right .profile-picture img {
+.right .messages .message .profile-picture img {
     border-radius: 50%;
 }
 
-
-.right .messages .messages:last-child {
-    margin: 0;
-}
-
-.right .messages p {
+.right .messages .message p {
     font-size: 0.8rem;
 }
+  
 
-.right .messages .profile-picture .active{
+.right .messages .message .profile-picture .active{
     width: 0.8rem;
     height: 0.8rem;
     border-radius: 50%;
@@ -522,7 +531,6 @@ main .container .right {
     bottom: 0;
     right: 0;
 }
-
 
 
 /*========================= FRIEND REQUESTS =========================*/
@@ -577,7 +585,7 @@ main .container .right {
     box-shadow: 0 0 1rem var(--color-primary);
 }
 
-/* ------------------------ FONT SIZE ------------------------- */
+/* ------------------------ Colors ------------------------- */
 
 .customize-theme .color {
     margin-top: 2rem;
@@ -596,6 +604,7 @@ main .container .right {
     width: 2.2rem;
     height: 2.2rem;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .customize-theme .choose-color span:nth-child(1){
@@ -627,6 +636,7 @@ main .container .right {
     align-items: center;
     justify-content: space-between;
     gap: 1.5rem;
+    cursor: pointer;
 }
 
 .customize-theme .choose-bg > div {
@@ -637,7 +647,7 @@ main .container .right {
     font-size: 1rem;
     font-weight: bold;
     border-radius: 0.4rem;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .customize-theme .choose-bg > div.active {
@@ -681,7 +691,7 @@ main .container .right {
 
  .left {
     width: 5rem;
-    z-index: 1;
+    z-index: 5;
  }
  
  main .container .left .profile{
@@ -720,7 +730,7 @@ main .container .right {
     }
 
     /* ---------------- NOTIFICATION POPUP ----------------- */
-    .left.notifications-popup {
+    .left .notifications-popup {
         position: absolute;
         left: -20rem;
         width: 20rem;
@@ -732,6 +742,10 @@ main .container .right {
         left: calc(20rem - 0.6rem);
         display: block;
     }
+
+    main .container .left .sidebar > div h3 {
+        display: none;
+      }
 
     main .container .middle {
         grid-column: 1/3;
