@@ -95,7 +95,7 @@ img {
     color: var(--color-gray);
 }
 
-/*=================== NAVBAR ===================*/
+
 nav {
     width: 100%;
     background: var(--color-white);
@@ -135,7 +135,7 @@ nav .create {
     gap:2rem;
 }
 
-/*============================= MAIN =========================*/
+
 
 main {
     position: relative;
@@ -149,7 +149,7 @@ main .container {
     position: relative;
 }
 
-/*========================== LEFT ======================*/
+
 
 main .container .left {
     height: max-content;
@@ -167,7 +167,7 @@ main .container .left .profile {
     width: 100%;
 }
 
-/*================================ SIDEBAR ===========================*/
+
 .left .sidebar {
     margin-top: 1rem;
     background: var(--color-white);
@@ -246,7 +246,7 @@ main .container .left .profile {
 }
 
 
-/*---------------------------------NOTIFICATION POPUP----------------------------*/
+
 
 .left .notifications-popup {
     position: absolute;
@@ -283,7 +283,7 @@ main .container .left .profile {
     display: block;
 }
 
-/*----------------MIDDLE----------------*/
+
 
 .middle .stories {
     display: flex;
@@ -363,7 +363,7 @@ main .container .left .profile {
 }
 
 
-/*----------------------------- CREATE POST-----------------------------*/
+
 
 .middle .create-post {
     width: 100%;
@@ -385,7 +385,7 @@ main .container .left .profile {
     color: var(--color-dark);
 }
 
-/* --------------------- FEEDS ---------------------*/
+
 .middle .feeds .feed {
     background: var(--color-white);
     border-radius: var(--card-border-radius);
@@ -441,7 +441,7 @@ main .container .left .profile {
     margin-left: 0.5rem;
 }
 
-/*=============================== RIGHT ==============================*/
+
 
 main .container .right {
     height: max-content;
@@ -533,7 +533,7 @@ main .container .right {
 }
 
 
-/*========================= FRIEND REQUESTS =========================*/
+
 .right .friend-requests {
     margin-top: 1rem;
 }
@@ -561,7 +561,7 @@ main .container .right {
     gap: 1rem;
 }
 
-/*=================================== THEME CUSTOMIZATION ===================================*/
+/*-- THEME CUSTOMIZATION --*/
 .customize-theme {
     background: rgba(255, 255, 255, 0.5);
     width: 100vw;
@@ -585,7 +585,6 @@ main .container .right {
     box-shadow: 0 0 1rem var(--color-primary);
 }
 
-/* ------------------------ Colors ------------------------- */
 
 .customize-theme .color {
     margin-top: 2rem;
@@ -626,7 +625,7 @@ main .container .right {
 .customize-theme .choose-color span.active{
     border: 5px solid white;
 }
-/*------------------------- BACKGROUND -------------------------*/
+
 .customize-theme .background {
     margin-top: 2rem;
 }
@@ -677,7 +676,7 @@ main .container .right {
     margin-right: 1rem;
 }
 
-/* ================================= MEDIA QUERIES FOR SMALL LAPTOPS AND BIG TABLETS =========================================*/
+/*SMALL LAPTOPS AND BIG TABLETS*/
 @media screen and (max-width: 1200px) {
     .container{
         width: 96%;
@@ -711,7 +710,7 @@ main .container .right {
  }
 }
 
-/* ========================================= MEDIA QUERIES FOR SMALL TABLETS AND MOBILE PHONES =========================================  */
+/*TABLETS AND MOBILE PHONES*/
 @media screen and (max-width: 992px) {
     nav .search-bar{
         display: none;
@@ -729,7 +728,6 @@ main .container .right {
         right: 0;
     }
 
-    /* ---------------- NOTIFICATION POPUP ----------------- */
     .left .notifications-popup {
         position: absolute;
         left: -20rem;
